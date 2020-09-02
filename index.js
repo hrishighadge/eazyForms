@@ -29,7 +29,6 @@ app.get('/forms/:id', function (req, res) {
 });
 
 app.post('/formData', function(req, res, next){
-    // req.body object has your form values
     var message = JSON.stringify(req.body);
     console.log(message.substring(1,message.length-1));
     // client.messages
