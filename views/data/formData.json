@@ -1,0 +1,32 @@
+[ 
+    {
+        "formId": 1,
+        "formTitle": "Survey Form",
+        "formData":[
+            {  
+                "question": "Name of the Person?",  
+                "type": "Short Answer",
+                "required": true 
+            }, 
+            { 
+                "question": "Email id of the Person?", 
+                "type": "Single Choice",
+                "required": true,
+                "options": ["option1", "option2"]
+            },
+            {
+                "question": "What is your favourite game?",
+                "type": "Multiple Choice",
+                "required": false,
+                "options": ["option1", "option2"]
+            },
+            { 
+                "question": "Email id of the Person?", 
+                "type": "Single Choice",
+                "required": true,
+                "options": ["option1", "option2"]
+            }
+        ]
+    }
+] 
+  

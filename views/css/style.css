@@ -1,0 +1,123 @@
+body{
+    background-color: #f0ebf8;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+}
+.form-container{
+    display: grid;
+}
+.whatsapp-form{
+    width: 60%;
+    justify-self: center;
+    margin-top: 10px;
+}
+.card{
+    border-radius: 8px;
+}
+.blue-strip{
+    border-radius: 8px 8px 0px 0px;
+    background-color: #3b7dd8;
+    height: 10px;
+    width: 100%;
+}
+.header-container{
+    margin: 10px 5px;
+}
+.required-field{
+    color: red;
+}
+.question-container{
+    padding: 26px 24px;
+}
+.card-margin{
+    margin-top: 10px;
+}
+.question-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.question{
+    margin-bottom: 10px;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .1px;
+    line-height: 24px;
+    color: #202124;
+    font-weight: 400;
+}
+.answer-container{
+    position: relative;
+    width: 100%;
+    word-break: break-word;
+}
+.short-answer{
+    border: none;
+    width: 100%;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #70757a;
+    border-bottom: 1px dotted rgba(0,0,0,0.38);
+}
+.red-asterisk{
+    color: red;
+}
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 4;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.26);
+}
+
+.radio-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.radio-container input:checked ~ .checkmark {
+    background-color: #3b7dd8;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkmark-radio{
+    border-radius: 50%;
+}
+.btn-primary{
+    margin-top: 20px;
+    background-color: #3b7dd8;
+    font-size: 14px;
+}
+.image-position{
+    align-self: center;
+    width: 200px;
+}
+.success-message{
+    color: #41ad48;
+}

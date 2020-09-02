@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>
+			<%=title%>
+		</title>
+		<link rel="shortcut icon" href="./Images/favicon.jpg" type="image/x-icon"> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+	</head>
+	<body>
+		<div class="container form-container">
+			<div class="whatsapp-form">
+				<form action="/formData" method="POST">
+					<div class="card">
+						<div class="blue-strip"></div>
+						<div class="container header-container">
+							<center>
+								<h2><%=formData.formTitle%></h2>
+								<p class="required-field">* Required</p>
+							</center>
+						</div>
+					</div>
+					<% var formContent = formData.formData
+					for(let i=0 ; i < formContent.length; i++){ %>
+					<div class="card card-margin">
+						<div class="container question-container">
+							<div class="question">
+								<%= formContent[i].question %>
+								<% if(formContent[i].required){ %>
+									<span class="red-asterisk">*</span>
+								<% } %>
+							</div>
+							<br>
+							<div class="answer-container">
+								<%if (formContent[i].type == "Short Answer") { %>
+									<input class="short-answer" type="text" placeholder="Short Answer" name="Q<%=i%>:<%= formContent[i].question %>" <% if(formContent[i].required){ %>Required<%}%>>
+								<% }else if(formContent[i].type == "Single Choice"){ 
+									for(let j=0 ; j < formContent[i].options.length; j++){%>
+									<label class="radio-container"><%=formContent[i].options[j]%>
+										<input type="radio" name="Q<%=i%>:<%= formContent[i].question %>" value="<%=formContent[i].options[j]%>" <% if(formContent[i].required){ %>Required<%}%>>
+										<span class="checkmark checkmark-radio"></span>
+									</label>
+									<% }
+								}else if(formContent[i].type == "Multiple Choice"){ 
+									for(let j=0 ; j < formContent[i].options.length; j++){%>
+									<label class="radio-container"><%=formContent[i].options[j]%>
+										<input type="checkbox" name="Q<%=i%>:<%= formContent[i].question %>" value="<%=formContent[i].options[j]%>" <% if(formContent[i].required){ %>Required<%}%>>
+										<span class="checkmark"></span>
+									</label>
+									<% }
+								}%>
+							</div>
+						</div>
+					</div>
+					<%}%>
+					<input type="submit" class="btn btn-primary" value="Submit">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
